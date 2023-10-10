@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/* eslint-disable no-undef */
+const Box = (props) => {
+  return (
+    <div className={`${props.className}`}>
+      <p>{props.text}</p>
+    </div>
+  );
+};
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const element = (
+  <div>
+    <h1>Boxes</h1>
+    <div className="boxContainer">
+      <Box className="box box1" text="Small" />
+      <Box className="box box2" text="Medium" />
+      <Box className="box box3" text="Large" />
+    </div>
+  </div>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(element, document.getElementById("root"));
